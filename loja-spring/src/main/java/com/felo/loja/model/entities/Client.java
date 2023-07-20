@@ -15,20 +15,22 @@ public class Client implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String email;
+	private String phone;
 	
 	public Client() {
 		
 	}
 
-	public Client(Long id, String name, String email) {
+	public Client(Long id, String name, String email, String phone) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
+		this.phone = phone;
 	}
 
 	public Long getId() {
@@ -53,6 +55,14 @@ public class Client implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	@Override

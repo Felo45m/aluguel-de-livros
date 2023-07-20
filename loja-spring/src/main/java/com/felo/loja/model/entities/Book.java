@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+import com.felo.loja.model.enums.Status;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,21 +18,22 @@ public class Book implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
-	private String autor;
+	private String author;
 	private BigDecimal price;
+	private Status status = Status.AVAILABLE;
 	
 	public Book() {
 	
 	}
 
-	public Book(Long id, String name, String autor, BigDecimal price) {
+	public Book(Long id, String name, String author, BigDecimal price) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.autor = autor;
+		this.author = author;
 		this.price = price;
 	}
 
@@ -50,12 +53,12 @@ public class Book implements Serializable {
 		this.name = name;
 	}
 
-	public String getAutor() {
-		return autor;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setAutor(String autor) {
-		this.autor = autor;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public BigDecimal getPrice() {
@@ -64,6 +67,14 @@ public class Book implements Serializable {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
+	}
+	
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 	@Override
