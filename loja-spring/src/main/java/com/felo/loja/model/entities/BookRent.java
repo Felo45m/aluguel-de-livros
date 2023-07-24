@@ -18,8 +18,8 @@ public class BookRent implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private Long ClientId;
-	private Long BookId;
+	private Long clientId;
+	private Long bookId;
 	private LocalDateTime now = LocalDateTime.now();
 	
 	public BookRent() {
@@ -28,8 +28,8 @@ public class BookRent implements Serializable {
 
 	public BookRent(Long id, Long clientId, Long bookId, LocalDateTime now) {
 		this.id = id;
-		ClientId = clientId;
-		BookId = bookId;
+		this.clientId = clientId;
+		this.bookId = bookId;
 		this.now = now;
 	}
 
@@ -42,19 +42,19 @@ public class BookRent implements Serializable {
 	}
 
 	public Long getClientId() {
-		return ClientId;
+		return clientId;
 	}
 
 	public void setClientId(Long clientId) {
-		ClientId = clientId;
+		this.clientId = clientId;
 	}
 
 	public Long getBookId() {
-		return BookId;
+		return bookId;
 	}
 
 	public void setBookId(Long bookId) {
-		BookId = bookId;
+		this.bookId = bookId;
 	}
 
 	public LocalDateTime getNow() {
