@@ -19,38 +19,38 @@ import com.felo.loja.model.entities.Book;
 import com.felo.loja.services.BookService;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/books")
 public class BookResource {
 
 	@Autowired
 	BookService bookService;
 	
-	@GetMapping("/books")
+	@GetMapping
 	public ResponseEntity<List<Book>> findAll() {
 		List<Book> List = bookService.findAll();
 		return ResponseEntity.ok().body(List);
 	}
 	
-	@GetMapping(value = "/book/{id}")
+	@GetMapping(value = "/{id}")
 	public ResponseEntity<Book> findById(@PathVariable(value = "id") Long id) {
 		Book book = bookService.findById(id);
 		return ResponseEntity.ok().body(book);
 	}
 	
-	@PostMapping("/book")
+	@PostMapping
 	public ResponseEntity<Book> saveBook(@RequestBody Book book) {
 		book = bookService.save(book);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("{id}").buildAndExpand(book.getId()).toUri();
 		return ResponseEntity.created(uri).body(book);
 	}
 	
-	@DeleteMapping(value = "/book/{id}")
+	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Void> deleteBook(@PathVariable(value = "id") Long id) {
 		bookService.delete(id);
 		return ResponseEntity.noContent().build();
 	}
 	
-	@PutMapping("/book")
+	@PutMapping
 	public Book updateBook(@RequestBody Book book) {
 		return bookService.save(book);
 	}
