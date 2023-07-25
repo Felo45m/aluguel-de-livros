@@ -9,5 +9,5 @@ import com.felo.loja.model.entities.ReservedBook;
 public interface ReservedBookRepository extends JpaRepository<ReservedBook, Long> {
 
 	Optional<ReservedBook> findById(Long id);
-	
+
 }
