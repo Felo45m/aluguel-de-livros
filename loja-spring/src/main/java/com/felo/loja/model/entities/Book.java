@@ -20,7 +20,7 @@ public class Book implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String name;
+	private String title;
 	private String author;
 	private BigDecimal price;
 	private Status status = Status.AVAILABLE;
@@ -29,10 +29,10 @@ public class Book implements Serializable {
 	
 	}
 
-	public Book(Long id, String name, String author, BigDecimal price) {
+	public Book(Long id, String title, String author, BigDecimal price) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.title = title;
 		this.author = author;
 		this.price = price;
 	}
@@ -45,12 +45,12 @@ public class Book implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getAuthor() {
