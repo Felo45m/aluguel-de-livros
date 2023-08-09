@@ -1,5 +1,5 @@
 import { BooksService } from 'src/app/services/books.service';
-import { IBook } from './../../intefaces/book';
+import { IBook } from '../../interfaces/book';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
