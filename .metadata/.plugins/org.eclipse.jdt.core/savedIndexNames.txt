@@ -27,9 +27,9 @@ INDEX VERSION 1.132+C:\ws-aluguel-livros\.metadata\.plugins\org.eclipse.jdt.core
 1859336371.index
 3306346353.index
 1178184830.index
-161807625.index
-1615943716.index
 1725103193.index
+1615943716.index
+161807625.index
 3739965761.index
 1865797976.index
 601174063.index
@@ -53,8 +53,8 @@ INDEX VERSION 1.132+C:\ws-aluguel-livros\.metadata\.plugins\org.eclipse.jdt.core
 603159145.index
 2452869046.index
 731196834.index
-2425742029.index
 1390341160.index
+2425742029.index
 124576294.index
 2505667910.index
 2498843340.index
@@ -63,7 +63,6 @@ INDEX VERSION 1.132+C:\ws-aluguel-livros\.metadata\.plugins\org.eclipse.jdt.core
 1195403925.index
 4147770673.index
 618500080.index
-2568801385.index
 1967547389.index
 1274505488.index
 1927806311.index

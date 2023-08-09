@@ -49,7 +49,7 @@ public class BookService {
 	public List<Book> available() {
 		List<Book> listBook = new ArrayList<Book>();
 		for(Book book : bookRepository.findAll()) {
-			if (book.getStatus()==Status.AVAILABLE) {
+			if (book.getStatus()==Status.DISPONIVEL) {
 				listBook.add(book);
 			}
 		}
@@ -59,7 +59,7 @@ public class BookService {
 	public List<Book> unavailable() {
 		List<Book> listBook = new ArrayList<Book>();
 		for(Book book : bookRepository.findAll()) {
-			if (book.getStatus()==Status.UNAVAILABLE) {
+			if (book.getStatus()==Status.INDISPONIVEL) {
 				listBook.add(book);
 			}
 		}

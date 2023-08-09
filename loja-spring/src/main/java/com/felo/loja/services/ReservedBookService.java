@@ -36,8 +36,8 @@ public class ReservedBookService {
 	
 	public ReservedBook save(ReservedBook reservedBook) {
 		Optional<Book> book = bookRepository.findById(reservedBook.getBookId());
-		if(book.get().getStatus()==Status.AVAILABLE) {
-			book.get().setStatus(Status.UNAVAILABLE);
+		if(book.get().getStatus()==Status.DISPONIVEL) {
+			book.get().setStatus(Status.INDISPONIVEL);
 			return reservedBookRepository.save(reservedBook);
 		}
 		throw new ResourceNotFoundException("Recurso invalido");
@@ -46,7 +46,7 @@ public class ReservedBookService {
 	public void delete(Long id) {
 		Optional<ReservedBook> bookRent = findById(id);
 		Optional<Book> book = bookRepository.findById(bookRent.get().getBookId());
-		book.get().setStatus(Status.AVAILABLE);
+		book.get().setStatus(Status.DISPONIVEL);
 		
 		reservedBookRepository.deleteById(id);
 	}

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.felo.loja.model.enums.Status;
 
 import jakarta.persistence.Entity;
@@ -19,11 +20,12 @@ public class Book implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonProperty("_id")
 	private Long id;
 	private String title;
 	private String author;
 	private BigDecimal price;
-	private Status status = Status.AVAILABLE;
+	private Status status = Status.DISPONIVEL;
 	
 	public Book() {
 	
