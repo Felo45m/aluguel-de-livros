@@ -21,7 +21,7 @@ export class ClientsService {
   }
 
   updateClient( client: IClient) : Observable<any> {
-    return this.http.put<IClient>(`${this.API}/${client._id}`, client)
+    return this.http.put<IClient>(`${this.API}/${client.id}`, client)
   }
 
   getClients() : Observable<IClient[]> {
@@ -32,7 +32,7 @@ export class ClientsService {
     return this.http.get<any>(`${this.API}/${_id}`);
   }
 
-  deleteClientById(client : IClient) : Observable<any> {
-    return this.http.delete<any>(`${this.API}/${client._id}`)
+  deleteClientById(id: number) : Observable<any> {
+    return this.http.delete<any>(`${this.API}/${id}`)
   }
 }

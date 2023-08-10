@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IClient } from 'src/app/interfaces/client';
+import { AlertService } from 'src/app/services/alert.service';
 import { ClientsService } from 'src/app/services/clients.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ClientsService } from 'src/app/services/clients.service';
 })
 export class ClientsComponent implements OnInit {
 
-  constructor(private clientsService: ClientsService) {}
+  constructor(private clientsService: ClientsService,  private alertService: AlertService) {}
 
   clients: IClient[] = [];
 
@@ -25,4 +26,15 @@ export class ClientsComponent implements OnInit {
     }))
   }
 
+  delete(id?: number) {
+    if (id) {
+      this.clientsService.deleteClientById(id).subscribe(() => {
+        this.alertService.alertSuccess('Cliente removido com sucesso!');
+        this.listClients();
+      }, (error) => {
+        console.error(error);
+      })
+    }
+      return;
+  }
 }

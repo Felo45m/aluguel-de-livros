@@ -42,6 +42,10 @@ export class CadastrarEditarComponent implements OnInit {
     }
   }
 
+  backToList() {
+    this.router.navigate(['/clients'])
+  }
+
   creatForm(client?: IClient) {
     return new FormGroup({
       nome: new FormControl(client?.name ? client?.name : '', Validators.required),
@@ -53,19 +57,20 @@ export class CadastrarEditarComponent implements OnInit {
   register() {
     const client: IClient = this.clientForm.value as IClient;
     if (this.clientId) {
-      client._id = this.clientId;
+      client.id = this.clientId;
       this.clientsService.updateClient(client).subscribe(() => {
         this.alertService.alertSuccess('Editado com sucesso!');
-        this.router.navigateByUrl('/clientes');
+        this.router.navigateByUrl('/clients');
       })
       return;
     }
 
     this.clientsService.saveClient(client).subscribe(() => {
       this.alertService.alertSuccess('Cadastrado com sucesso!');
-      this.router.navigateByUrl('/clientes');
+      this.router.navigateByUrl('/clients');
     }, (error) => {
       console.error(error);
     });
   }
+
 }

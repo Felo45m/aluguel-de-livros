@@ -11,6 +11,7 @@ import { CadastrarEditarComponent } from './pages/clients/cadastrar/cadastrar.co
 import { ClientsComponent } from './pages/clients/clients.component';
 import { HomeComponent } from './pages/home/home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { HomeComponent } from './pages/home/home.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

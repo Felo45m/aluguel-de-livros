@@ -3,7 +3,7 @@
     <h2 class="pb-2 border-bottom">Clientes</h2>
   </div>
   <div class="col-12">
-    <a class="btn btn-sm btn-dark mb-3" routerLink="/clients/cadastrar">Cadastrar</a>
+    <a class="btn btn-sm btn-dark mb-3" routerLink="/clients/cadastrar">Novo</a>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
@@ -16,7 +16,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let client of clients">
-          <td>{{ client._id }}</td>
+          <td>{{ client.id }}</td>
           <td>{{ client.name }}</td>
           <td>{{ client.email }}</td>
           <td>{{ client.phone }}</td>
@@ -30,8 +30,8 @@
                 Ações
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" routerLink="/clients/edit/{{client._id}}">Editar</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0)">Excluir</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/clients/cadastrar{{client.id}}">Editar</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" (click)="delete(client.id)">Excluir</a></li>
               </ul>
             </div>
           </td>
