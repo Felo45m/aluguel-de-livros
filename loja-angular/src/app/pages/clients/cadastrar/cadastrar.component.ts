@@ -62,7 +62,7 @@ export class CadastrarEditarComponent implements OnInit {
     }
 
     this.clientsService.saveClient(client).subscribe(() => {
-      this.alertService.alertSuccess('Editado com sucesso!');
+      this.alertService.alertSuccess('Cadastrado com sucesso!');
       this.router.navigateByUrl('/clientes');
     }, (error) => {
       console.error(error);

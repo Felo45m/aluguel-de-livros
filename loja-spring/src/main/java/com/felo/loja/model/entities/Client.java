@@ -3,6 +3,8 @@ package com.felo.loja.model.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +18,7 @@ public class Client implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonProperty("_id")
 	private Long id;
 	private String name;
 	private String email;
